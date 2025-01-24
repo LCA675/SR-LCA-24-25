@@ -16,14 +16,22 @@ $INCLUDE /var/lib/bind/db.ejemplorrhh.com
 $INCLUDE /var/lib/bind/db.ejemploadmin.com 
 
 ;Servidor DHCP	+	Router.Debian1-Pruebas/Router2
-PC10	IN	A	172.17.2.11
-	IN	A	172.17.3.11
+PC10	IN	A	172.17.3.11
+	IN	A	172.17.2.11
+
+router	IN	CNAME	PC10
 
 ;Servidores DNS
 PC11	IN	A	172.17.3.15
+dns1	IN	CNAME	PC11
 PC12	IN	A	172.17.3.14
+dns2	IN	CNAME	PC12
 servidorimpresion	IN	A	172.17.3.13
+
 
 ;Servidores de la red 172.17.2.0/24
 PC14.ejemplo.com.	IN	A	172.17.2.13
 PC15	IN	A	172.17.2.14
+www	IN	CNAME	PC14
+ftp	IN	CNAME	PC14
+
